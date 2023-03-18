@@ -2,7 +2,7 @@
 
 /**
  * main - prints all alpabetical characters in lowercase
- * Returns: returns an integer value of zero
+ * Return: return an integer value of zero
  */
 int main(void)
 {
