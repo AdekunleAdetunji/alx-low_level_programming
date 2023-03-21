@@ -1,3 +1,5 @@
+int add(int, int);
+void times_table();
 void jack_bauer();
 int print_last_digit(int i);
 int _abs(int);
