@@ -3,7 +3,7 @@
 /**
  * print_sign - prints the sign on a number and 0 for digit zero
  * @i: integer argument to be supplied to the function
- * Return: Returns an integer value of either 1 for a + sign, 0 for a negative \
+ * Return: Returns an integer value of either 1 for a + sign, 0 for a negative
  * and -1 for 0
  */
 int print_sign(int i)
