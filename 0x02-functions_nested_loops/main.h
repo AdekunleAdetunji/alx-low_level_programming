@@ -1,3 +1,4 @@
+int print_last_digit(int i);
 int _abs(int);
 int _putchar(char c);
 void print_alphabet(void);
