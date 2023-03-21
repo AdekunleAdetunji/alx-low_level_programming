@@ -13,7 +13,7 @@ int main(void)
 }
 
 /**
- * 0_putchar - prints the "_putchar" using _putchar() funtion
+ * print_putchar - prints the "_putchar" using _putchar() funtion
  * Return: Returns an integer value of zero
  */
 int print_putchar(void)
