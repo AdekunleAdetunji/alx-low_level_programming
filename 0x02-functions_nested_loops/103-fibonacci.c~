@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+/**
+ * main - prints the first 50 fibonnanci numbers
+ *
+ * Return: Returns an integer value of 1
+ */
+int main(void)
+{
+	unsigned long int sum, first, second, value;
+
+	first = 1;
+	second = 2;
+	sum = 2;
+	while (second < 4000000)
+	{
+		value = first + second;
+		first = second;
+		second = value;
+		if (value % 2 == 0)
+			sum += value;
+	}
+	printf("%ld", sum);
+	putchar('\n');
+}
