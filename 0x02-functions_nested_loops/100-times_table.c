@@ -10,13 +10,13 @@ void print_times_table(int n)
 {
 	int x, y;
 
-	if (n < 15 && n > 0)
+	if (n >= 0 && n < 15)
 	{
 		for (y = 0; y <= n; y++)
 		{
 			for (x = 0; x <= n; x++)
 			{
-				int prod, next;
+				int prod;
 
 				prod = x * y;
 				if (prod > 9 && prod > 99)
@@ -31,23 +31,38 @@ void print_times_table(int n)
 				_putchar('0' + (prod % 10));
 				if (x != n)
 				{
-					_putchar(',');
-					_putchar(' ');
-					next = (x + 1) * y;
-					if (prod < 10)
-					{
-						_putchar(' ');
-						if (next < 10)
-						{
-							_putchar(' ');
-						}
-					}
-					else if (prod > 9 && prod < 100)
-						if (next < 100)
-							_putchar(' ');
+					seperator(x, y, prod);
 				}
 			}
 			_putchar('\n');
 		}
 	}
+}
+
+/**
+ * seperator - seperates two digits adding the number of spaces to use
+ * depending on the value of the digit
+ * @x: The value of x in the loop
+ * @y: The value of y in the loop
+ * @prod: The product of x and y
+ *
+ * Return: Returns a void value on completion
+ */
+void seperator(int x, int y, int prod)
+{
+	int next;
+
+	_putchar(',');
+	_putchar(' ');
+	next = (x + 1) * y;
+	if (prod < 10)
+	{
+		_putchar(' ');
+		if (next < 10)
+		{
+			_putchar(' ');
+		}
+	}
+	else if (prod > 9 && prod < 100 && next < 100)
+		_putchar(' ');
 }
