@@ -5,7 +5,7 @@
  *
  * Return: Returns the count of the string contained in the address
  */
-char count(char *s)
+int count(char *s)
 {
 	int i, count;
 
