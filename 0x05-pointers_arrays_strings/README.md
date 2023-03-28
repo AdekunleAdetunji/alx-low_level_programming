@@ -1,0 +1,1 @@
+This repository holds C source files of functions about pointers and memory allocation
