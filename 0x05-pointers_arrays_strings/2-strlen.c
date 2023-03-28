@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _strlen - Prints the length of a string
- * @s - memory address of string
+ * @s: memory address of string
  *
  * Return: Return a void value
  */
