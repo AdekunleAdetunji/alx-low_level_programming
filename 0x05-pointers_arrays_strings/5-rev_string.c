@@ -14,7 +14,7 @@ int count(char *s)
 	{
 		count++;
 	}
-	return count;
+	return (count);
 }
 
 /**
