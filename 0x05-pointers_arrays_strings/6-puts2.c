@@ -28,12 +28,9 @@ void puts2(char *str)
 	int i, len;
 
 	len = count(str);
-	for (i = 0; i <= len; i++)
+	for (i = 0; i < len; i = i + 2)
 	{
-		if (*(str + i) % 2 == 0)
-		{
-			_putchar(*(str + i));
-		}
+		_putchar(*(str + i));
 	}
 	_putchar('\n');
 }
