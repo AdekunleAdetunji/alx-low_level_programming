@@ -1,5 +1,4 @@
 #include <stddef.h>
-#include <ctype.h>
 /**
  * _strstr - Locates a substring in a string
  * @haystack: The target string we are searching in
@@ -10,6 +9,8 @@ char *_strstr(char *haystack, char *needle)
 {
 	int i, j, ind;
 
+	if (!needle)
+		return (haystack);
 	for (i = 0; haystack[i] != '\0'; i++)
 	{
 		ind = 0;
@@ -17,8 +18,7 @@ char *_strstr(char *haystack, char *needle)
 		{
 			for (j = 0; needle[j] != '\0'; j++)
 			{
-				if (tolower(haystack[i + j]) ==
-				    tolower(needle[j]))
+				if (haystack[i + j] == needle[j])
 					ind = 1;
 				else
 					ind = 0;
