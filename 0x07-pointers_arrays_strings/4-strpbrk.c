@@ -1,7 +1,7 @@
 #include <stddef.h>
 /**
  * _strpbrk - Searches for the first occurence of a string character in another
- string
+ * string
  * @s: The string we are checking for substring in
  * @accept: The substring we are checking for
  * Return: Returns the number of bytes in the initial segment of s which
