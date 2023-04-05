@@ -35,6 +35,8 @@ void _print_rev_recursion(char *s)
 {
 	int len;
 
+	if (*s == '\0')
+		return;
 	len = count(s) - 1;
 	position(s, len);
 }
