@@ -11,7 +11,7 @@ int checker(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (i == 0 && s[i] == '+')
+		if (i == 0 && (s[i] == '+' || s[i] == '-'))
 			continue;
 		else if (!(s[i] >= '0' && s[i] <= '9'))
 			return (1);
