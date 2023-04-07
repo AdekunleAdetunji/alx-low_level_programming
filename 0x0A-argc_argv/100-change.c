@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 
 	min = 0;
 	cent = atoi(argv[1]);
-	if (argc > 2 || checker(argv[1]))
+	if (argc != 2 || checker(argv[1]))
 	{
 		printf("Error\n");
 		return (1);
