@@ -15,13 +15,19 @@ int **alloc_grid(int width, int height)
 
 	mem_y = malloc(sizeof(int *) * height);
 	if (!mem_y)
+	{
+		free(mem_y);
 		return (NULL);
+	}
 
 	for (i = 0; i < height; i++)
 	{
 		mem_x = calloc(sizeof(int), width);
 		if (!mem_x)
+		{
+			free(mem_x);
 			return (NULL);
+		}
 		mem_y[i] = mem_x;
 	}
 	return (mem_y);
