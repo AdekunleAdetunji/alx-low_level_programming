@@ -30,5 +30,9 @@ int **alloc_grid(int width, int height)
 		}
 		mem_y[i] = mem_x;
 	}
+
+	if (!mem_y)
+		free(mem_y);
+
 	return (mem_y);
 }
