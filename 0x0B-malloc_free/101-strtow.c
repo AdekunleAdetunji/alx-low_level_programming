@@ -57,7 +57,7 @@ char **strtow(char *str)
 				we = i;
 				break;
 			}
-		word_len = we - ws + 1;
+		word_len = we - ws;
 		mem_x = malloc(sizeof(char) * word_len);
 		if (!mem_x)
 			return (NULL);
