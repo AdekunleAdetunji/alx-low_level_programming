@@ -13,7 +13,7 @@ void print_numbers(const char *seperator, int n, ...)
 	int i, arg_value;
 	va_list arg_list;
 
-	if (seperator == NULL || n == 0)
+	if (n == 0)
 		return;
 
 	va_start(arg_list, n);
@@ -25,7 +25,9 @@ void print_numbers(const char *seperator, int n, ...)
 			printf("%d\n", arg_value);
 			continue;
 		}
-		printf("%d%s", arg_value, seperator);
+		printf("%d", arg_value);
+		if (seperator)
+			printf("%s", seperator);
 	}
 	va_end(arg_list);
 }
