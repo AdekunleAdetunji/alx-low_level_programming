@@ -13,16 +13,13 @@ void print_numbers(const char *seperator, int n, ...)
 	int i, arg_value;
 	va_list arg_list;
 
-	if (n == 0)
-		return;
-
 	va_start(arg_list, n);
 	for (i = 0; i < n; i++)
 	{
 		arg_value = va_arg(arg_list, int);
 		if (n - 1 == i)
 		{
-			printf("%d\n", arg_value);
+			printf("%d", arg_value);
 			continue;
 		}
 		printf("%d", arg_value);
@@ -30,4 +27,5 @@ void print_numbers(const char *seperator, int n, ...)
 			printf("%s", seperator);
 	}
 	va_end(arg_list);
+	putchar('\n');
 }
