@@ -31,7 +31,7 @@ void print_all(const char * const type_list, ...)
 			break;
 		case 's':
 			s = va_arg(arg_list, char *);
-			if (!s)
+			if (s == NULL)
 			{
 				printf("(nil)");
 				break;
@@ -46,5 +46,6 @@ void print_all(const char * const type_list, ...)
 		flag = 0;
 		y++;
 	}
+	va_end(arg_list);
 	printf("\n");
 }
