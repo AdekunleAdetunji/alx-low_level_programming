@@ -18,25 +18,18 @@ void print_all(const char * const type_list, ...)
 		switch (type_list[y])
 		{
 		case 'c':
-		{
 			printf("%c", (char) va_arg(arg_list, int));
 			flag = 1;
 			break;
-		}
 		case 'i':
-		{
 			printf("%i", va_arg(arg_list, int));
 			flag = 1;
 			break;
-		}
 		case 'f':
-		{
 			printf("%f", va_arg(arg_list, double));
 			flag = 1;
 			break;
-		}
 		case 's':
-		{
 			s = va_arg(arg_list, char *);
 			if (!s)
 			{
@@ -48,7 +41,6 @@ void print_all(const char * const type_list, ...)
 			break;
 		}
 		x++;
-		}
 		if (flag == 1 && type_list[y + 1] != '\0')
 			printf(", ");
 		flag = 0;
