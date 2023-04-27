@@ -29,8 +29,8 @@ size_t print_list(const list_t *h)
 {
 	size_t i;
 
-	if (head == NULL)
-		return (NULL);
+	if (h == NULL)
+		return (0);
 	for (i = 1; h->next != NULL; i++)
 	{
 		element(h);
