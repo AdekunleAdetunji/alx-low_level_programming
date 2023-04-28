@@ -19,15 +19,15 @@ list_t *add_node(list_t **head, const char *str)
 	}
 
 	dupstr = strdup(str);
+	if (dupstr == NULL)
+	{
+		free(mem);
+		return (NULL);
+	}
 	mem->str = dupstr;
 	mem->len = strlen(dupstr);
-	if ((*head) == NULL)
-		(*head) = mem;
-	else
-	{
-		mem->next = (*head);
-		(*head) = mem;
-	}
+        mem->next = *head;
+	*head = mem;
 
 	return (mem);
 }
