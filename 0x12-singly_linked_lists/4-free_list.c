@@ -11,21 +11,10 @@ list_t *main_free(list_t *node)
 
 	if (node->str)
 	{
-		printf("Str: %s\n", node->str);
 		free(node->str);
-		printf("Str Freed\n");
 	}
-	/**if (node->len)
-	{
-		printf("Len: %i\n", (int)node->len);
-		free(&(node->len));
-		printf("Freed Len");
-		}*/
 	temp = node->next;
-	if (temp)
-		free(node->next);
-	if (node)
-		free(node);
+	free(node);
 	return (temp);
 }
 
@@ -45,7 +34,6 @@ void free_list(list_t *head)
 	temp = head;
 	for (i = 0; temp != NULL; i++)
 	{
-		printf("Iter :%i\n", i);
 		temp = main_free(temp);
 	}
 }
