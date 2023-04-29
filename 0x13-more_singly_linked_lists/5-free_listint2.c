@@ -25,6 +25,8 @@ listint_t *main_free(listint_t *h)
 void free_listint2(listint_t **h)
 {
 	int i;
+	if (h == NULL)
+		return;
 
 	for (i = 0; (*h)->next != NULL; i++)
 		*h = main_free(*h);
