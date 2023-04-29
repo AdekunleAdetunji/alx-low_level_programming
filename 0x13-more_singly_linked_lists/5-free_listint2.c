@@ -25,6 +25,7 @@ listint_t *main_free(listint_t *h)
 void free_listint2(listint_t **h)
 {
 	int i;
+
 	if (h == NULL)
 		return;
 
