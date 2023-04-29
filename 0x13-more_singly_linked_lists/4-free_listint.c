@@ -24,6 +24,9 @@ void free_listint(listint_t *h)
 {
 	int i;
 
+	if (h == NULL)
+		return;
+
 	for (i = 0; h->next != NULL; i++)
 	{
 		h = main_free(h);
