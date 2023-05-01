@@ -25,17 +25,17 @@ unsigned int count(listint_t *h)
  * @n: The index of the node of interest
  * Return: Returns either NULL or a node pointer
  */
-listint_t *get_nodeint_at_index(listint_t *h, unsigned int n)
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	unsigned int i, len;
 	listint_t *temp;
 
-	len = count(h);
-	if (n > len)
+	len = count(head);
+	if (index > len)
 		return (NULL);
 
-	temp = h;
-	for (i = 0; (temp != NULL && i < n); i++)
+	temp = head;
+	for (i = 0; (temp != NULL && i < index); i++)
 	{
 		temp = temp->next;
 	}
