@@ -21,8 +21,8 @@ unsigned int count(listint_t *h)
 
 /**
  * get_nodeint_at_index - get the node at the index of a linked list
- * @h: The head node of the linked list
- * @n: The index of the node of interest
+ * @head: The head node of the linked list
+ * @index: The index of the node of interest
  * Return: Returns either NULL or a node pointer
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
