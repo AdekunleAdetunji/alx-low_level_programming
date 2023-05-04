@@ -10,7 +10,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int i, j, power, value = 0, mul = 1;
 	char digit;
 
-	if (!b || strlen(b) > 32)
+	if (!b)
 		return (0);
 
 	power = strlen(b) - 1;
