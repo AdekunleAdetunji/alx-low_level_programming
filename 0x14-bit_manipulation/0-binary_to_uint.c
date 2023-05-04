@@ -8,7 +8,6 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int i, j, power, value = 0, mul = 1;
-	char digit;
 
 	if (!b)
 		return (0);
@@ -19,10 +18,9 @@ unsigned int binary_to_uint(const char *b)
 		if (b[i] < '0' || b[i] > '1')
 			return (0);
 
-		digit = b[i];
 		for (j = 0; j < power; j++)
 			mul *= 2;
-		value += atoi(&digit) * mul;
+		value += (b[i] - '0') * mul;
 		power -= 1;
 		mul = 1;
 	}
