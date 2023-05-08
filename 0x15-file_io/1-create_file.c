@@ -39,7 +39,7 @@ int create_file(const char *filename, char *text_content)
 	{
 		word_count = count(text_content);
 		bytes_written = write(fd, text_content, word_count);
-		if (bytes_written < 1)
+		if (bytes_written < 0)
 		{
 			close(fd);
 			return (-1);
