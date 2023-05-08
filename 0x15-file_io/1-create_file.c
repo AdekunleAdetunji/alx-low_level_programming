@@ -9,7 +9,7 @@ int count(char *str)
 {
 	int i, strcount = 0;
 
-	for (i = 0, str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 		strcount += 1;
 	return (strcount);
 }
