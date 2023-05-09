@@ -32,7 +32,7 @@ void error(int flag, int fd, char *filename)
 		dprintf(2, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
-	if (flag == 2 && fd == -1)
+	else if (flag == 2 && fd == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", filename);
 		exit(99);
