@@ -22,21 +22,18 @@ void quit(int fd)
  * opening, reading, writing, to a file
  * @flag: The flag to determine the kind of error message
  * @filename: The filename supplied on the command line
+ * @fd: The file descriptor value
  * Return: Void
  */
-void error(int flag, char *filename)
+void error(int flag, int fd, char *filename)
 {
-	if (flag == 1)
+	if (flag == 1 && fd < 0)
 	{
-		quit(3);
-		quit(4);
 		dprintf(2, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
-	if (flag == 2)
+	if (flag == 2 && fd < 0)
 	{
-		quit(3);
-		quit(4);
 		dprintf(2, "Error: Can't write to %s\n", filename);
 		exit(99);
 	}
@@ -60,27 +57,18 @@ int main(int argc, char **argv)
 	}
 
 	file_from = open(argv[1], O_RDONLY);
-	if (file_from < 1)
-	{
-		quit(3);
-		dprintf(2, "Error: Can't read from %s\n", argv[1]);
-		exit(98);
-	}
+	error(1, file_from, argv[1]);
 
-	file_to = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
-	if (file_to < 1)
-		error(2, argv[2]);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	error(2, file_to, argv[2]);
 
 	for (i = 0; bytes_read == 1024; i++)
 	{
 		bytes_read = read(file_from, str, sizeof(str));
-		if (bytes_read < 0)
-			error(1, argv[1]);
+		error(1, bytes_read, argv[1]);
 		bytes_written = write(file_to, str, bytes_read);
-		if (bytes_written < 0)
-			error(2, argv[2]);
+		error(2, bytes_written, argv[2]);
 	}
-
 	quit(3);
 	quit(4);
 	return (0);
