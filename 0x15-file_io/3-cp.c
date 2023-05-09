@@ -10,7 +10,7 @@ void quit(int fd)
 	int close_return;
 
 	close_return = close(fd);
-	if (close_return < 0)
+	if (close_return == -1)
 	{
 		dprintf(2, "Can't close fd %i\n", fd);
 		exit(100);
@@ -27,12 +27,12 @@ void quit(int fd)
  */
 void error(int flag, int fd, char *filename)
 {
-	if (flag == 1 && fd < 0)
+	if (flag == 1 && fd == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
-	if (flag == 2 && fd < 0)
+	if (flag == 2 && fd == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", filename);
 		exit(99);
