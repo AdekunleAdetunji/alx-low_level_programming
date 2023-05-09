@@ -12,7 +12,7 @@ void quit(int fd)
 	close_return = close(fd);
 	if (close_return == -1)
 	{
-		dprintf(2, "Error: Can't close fd %i\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd);
 		exit(100);
 	}
 }
@@ -29,12 +29,13 @@ void error(int flag, int fd, char *filename)
 {
 	if (flag == 1 && fd == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
+			filename);
 		exit(98);
 	}
 	else if (flag == 2 && fd == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 		exit(99);
 	}
 }
@@ -52,7 +53,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(2, "%s", "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
