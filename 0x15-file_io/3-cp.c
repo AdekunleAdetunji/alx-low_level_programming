@@ -69,7 +69,7 @@ int main(int argc, char **argv)
 		bytes_written = write(file_to, str, bytes_read);
 		error(2, bytes_written, argv[2]);
 	}
-	quit(3);
-	quit(4);
+	quit(file_from);
+	quit(file_to);
 	return (0);
 }
