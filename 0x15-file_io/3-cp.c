@@ -12,7 +12,7 @@ void quit(int fd)
 	close_return = close(fd);
 	if (close_return == -4)
 	{
-		dprintf(2, "Can't close fd %i\n", fd);
+		dprintf(2, "Error: Can't close fd %i\n", fd);
 		exit(100);
 	}
 }
@@ -70,7 +70,7 @@ int main(int argc, char **argv)
 		bytes_written = write(file_to, str, bytes_read);
 		error(2, bytes_written, argv[2]);
 	}
-	close(file_to);
-	close(file_from);
+	quit(file_from);
+	quit(file_to);
 	return (0);
 }
