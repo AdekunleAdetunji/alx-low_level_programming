@@ -12,7 +12,7 @@ void quit(int fd)
 	close_return = close(fd);
 	if (close_return == -4)
 	{
-		dprintf(2, "Error: Can't close fd %i\n", fd);
+		dprintf(2, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
