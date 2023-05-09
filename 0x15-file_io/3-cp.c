@@ -49,6 +49,7 @@ int main(int argc, char **argv)
 {
 	int i, file_from, file_to, bytes_read = 1024, bytes_written;
 	char str[1024];
+	unsigned int mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
 	{
@@ -59,8 +60,8 @@ int main(int argc, char **argv)
 	file_from = open(argv[1], O_RDONLY);
 	error(1, file_from, argv[1]);
 
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	error(2, file_to, argv[2]);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
+	error(2, file_to,  argv[2]);
 
 	for (i = 0; bytes_read == 1024; i++)
 	{
