@@ -55,7 +55,7 @@ void class(unsigned char *class)
 }
 
 /**
- * magic: Display the magic number of an ELF header
+ * magic - Display the magic number of an ELF header
  * @magic: A string of elf numbers
  * Return: Void
  */
@@ -64,7 +64,7 @@ void magic(unsigned char *magic)
 	int i = 0;
 
 	printf("  Magic:   ");
-	while(i < EI_NIDENT)
+	while (i < EI_NIDENT)
 	{
 		printf("%02x", magic[i]);
 
@@ -135,7 +135,7 @@ void abi(unsigned char *magic)
 
 /**
  * data - Write the data of an ELF header to stdout.
- * @e_ident: A pointer to an array containing the ELF class.
+ * @magic: A pointer to an array containing the ELF class.
  */
 void data(unsigned char *magic)
 {
