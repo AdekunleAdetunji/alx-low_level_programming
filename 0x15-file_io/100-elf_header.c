@@ -1,4 +1,12 @@
-#include "main.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <stdarg.h>
+#include <sys/stat.h>
+#include <elf.h>
+#include <sys/types.h>
+
 
 /**
  * elf - checks for elf files
