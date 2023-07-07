@@ -41,7 +41,6 @@ void han_col(hash_table_t *ht, char *key, char *value, unsigned long int index)
  * @ht: The hash table to be updated
  * @key: The key to be used in determining the hash table index
  * @value: The value to be in the data field of the hash node
- * @index: The hash table index
  * Return: 0 or 1
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
