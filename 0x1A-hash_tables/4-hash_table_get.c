@@ -11,8 +11,14 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int index, tab_size;
 	hash_node_t *linked_list, *temp;
 
+	if (ht == NULL || key == NULL)
+		return (NULL);
+
 	tab_size = ht->size;
 	index = key_index((const unsigned char *) key, tab_size);
+	if (index >= tab_size)
+		return (NULL);
+
 	linked_list = ht->array[index];
 	if (linked_list)
 	{
