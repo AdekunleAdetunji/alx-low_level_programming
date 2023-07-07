@@ -10,13 +10,13 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned long int i, flag = 0;
 
 	if (ht == NULL)
-        	return;
+		return;
 
 	putchar('{');
 	for (i = 0; i < ht->size; i++)
 	{
 		head = ht->array[i];
-		if (head)
+		if (head != NULL)
 		{
 			if (flag == 1)
 				printf(", ");
