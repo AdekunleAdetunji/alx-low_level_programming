@@ -18,7 +18,9 @@ void han_col(hash_table_t *ht, char *key, char *value, unsigned long int index)
 	if (temp)
 	{
 		free(temp->value);
+		free(temp->key);
 		temp->value = value;
+		temp->key = key;
 	}
 	else
 	{
@@ -27,6 +29,7 @@ void han_col(hash_table_t *ht, char *key, char *value, unsigned long int index)
 		{
 			free(key);
 			free(value);
+			return;
 		}
 		new->key = key;
 		new->value = value;
@@ -73,6 +76,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		new->value = new_value;
 		new->key = new_key;
+		new->next = NULL;
 		ht->array[index] = new;
 	}
 	else
