@@ -218,7 +218,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 		return (NULL);
 
 	temp = head;
-	while(temp)
+	while (temp)
 	{
 		if (strcmp(temp->key, key) == 0)
 			break;
