@@ -297,6 +297,8 @@ void shash_table_delete(shash_table_t *ht)
 {
 	shash_node_t *temp, *next = NULL;
 
+	if (!ht)
+		return;
 	temp = ht->shead;
 
 	while (temp)
