@@ -196,6 +196,39 @@ void ord_insert(shash_table_t *ht, shash_node_t *new)
 	}
 }
 
+/**
+ * shash_table_get - get the value associated with a key from a hash
+ * table
+ * @ht: The hash table in question
+ * @key: The retrieval key
+ * Return: The value associated with the key or NULL if none is found
+ */
+char *shash_table_get(const shash_table_t *ht, const char *key)
+{
+	unsigned long int index;
+	shash_node_t *head, *temp;
+
+	if (!ht || !key || *key == '\0')
+		return (NULL);
+
+	index = key_index((const unsigned char *) key, ht->size);
+
+	head = ht->array[index];
+	if (!head)
+		return (NULL);
+
+	temp = head;
+	while(temp)
+	{
+		if (strcmp(temp->key, key) == 0)
+			break;
+		temp = temp->next;
+	}
+
+	if (!temp)
+		return (NULL);
+	return (temp->value);
+}
 
 /**
  * shash_table_print - print the sorted linked list in a table
