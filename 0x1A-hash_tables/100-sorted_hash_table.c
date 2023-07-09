@@ -47,17 +47,11 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 	new_value = strdup(value);
 	if (!new_value)
-	{
-		free(ht->array);
-		free(ht);
 		return (0);
-	}
 	new_key = strdup(key);
 	if (!new_key)
 	{
 		free(new_value);
-		free(ht->array);
-		free(ht);
 		return (0);
 	}
 	index = key_index((const unsigned char *) new_key, ht->size);
@@ -132,8 +126,6 @@ void han_col(shash_table_t *ht, char *key, char *value,
 		new = malloc(sizeof(shash_node_t));
 		if (!new)
 		{
-			free(ht->array);
-			free(ht);
 			free(key);
 			free(value);
 			return;
