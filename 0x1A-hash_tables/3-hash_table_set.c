@@ -1,14 +1,15 @@
 #include "hash_tables.h"
 
 /**
- * han_col - handle collision if it occurs
+ * handle_col - handle collision if it occurs
  * @ht: The hash table
  * @key: The key of the hash node
  * @value: The value of the hash node
  * @index: The hash index
  * Return: Void
  */
-void han_col(hash_table_t *ht, char *key, char *value, unsigned long int index)
+void handle_col(hash_table_t *ht, char *key, char *value,
+		unsigned long int index)
 {
 	hash_node_t *new, *temp;
 
@@ -80,6 +81,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = new;
 	}
 	else
-		han_col(ht, new_key, new_value, index);
+		handle_col(ht, new_key, new_value, index);
 	return (1);
 }
