@@ -23,6 +23,7 @@ def island_perimeter(grid):
         for x, val in enumerate(row):
             if val == 1 and not flag:
                 x_1, y_1 = x, y
+                x_2, y_2 = x + 1, y + 1
                 flag = True
             elif val == 1 and flag:
                 x_2, y_2 = x + 1, y + 1
